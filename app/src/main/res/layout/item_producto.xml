@@ -30,6 +30,15 @@
             android:layout_marginStart="12dp"
             android:layout_alignTop="@id/imgProducto" />
 
+        <ImageButton
+            android:id="@+id/btnEditar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_edit"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Editar" />
+
         <TextView
             android:id="@+id/tvPrecio"
             android:layout_width="wrap_content"
@@ -40,16 +49,6 @@
             android:layout_below="@id/tvNombre"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"/>
-
-
-        <ImageButton
-            android:id="@+id/btnEditar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:src="@android:drawable/ic_menu_edit"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Editar" />
 
         <ImageButton
             android:id="@+id/btnBorrar"
