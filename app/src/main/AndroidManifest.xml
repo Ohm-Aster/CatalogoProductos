@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CatalogoProductos"
         tools:targetApi="31">
+        <activity android:name=".view.DetalleProductoActivity" />
         <activity android:name=".view.AgregarProductoActivity" />
         <activity
             android:name=".view.MainActivity"

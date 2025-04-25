@@ -30,6 +30,18 @@
             android:layout_marginStart="12dp"
             android:layout_alignTop="@id/imgProducto" />
 
+        <TextView
+            android:id="@+id/tvPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0.00"
+            android:textSize="16sp"
+            android:layout_toEndOf="@id/imgProducto"
+            android:layout_below="@id/tvNombre"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"/>
+
+
         <ImageButton
             android:id="@+id/btnEditar"
             android:layout_width="50dp"
