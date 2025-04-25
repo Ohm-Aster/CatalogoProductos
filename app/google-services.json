@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910184320922",
+    "project_id": "catalogoproductos-ac9fa",
+    "storage_bucket": "catalogoproductos-ac9fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910184320922:android:3530196bc57259b269f423",
+        "android_client_info": {
+          "package_name": "com.ohmaster.catalogoproductos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw8srUsZdiT4aNggwK5FanEHhLkZdsX88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

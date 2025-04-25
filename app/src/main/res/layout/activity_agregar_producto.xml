@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nombre del producto"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etCosto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Costo"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Precio"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etTiempo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Tiempo de impresión"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnSeleccionarImagenes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar imágenes" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar producto"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+</ScrollView>
