@@ -11,6 +11,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.ohmaster.catalogoproductos.R;
 import com.ohmaster.catalogoproductos.adapter.ProductoAdapter;
 import com.ohmaster.catalogoproductos.model.Producto;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ProductoAdapter adapter;
+    private ListenerRegistration listener;
     private ProductoViewModel viewModel;
     private final ArrayList<Producto> productos = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -58,5 +62,30 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AgregarProductoActivity.class);
             launcher.launch(intent);
         });
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        listener = FirebaseFirestore.getInstance()
+                .collection("productos")
+                .addSnapshotListener((value, error) -> {
+                    if (error != null || value == null) return;
+                    productos.clear();
+                    for (DocumentSnapshot doc : value.getDocuments()) {
+                        Producto p = doc.toObject(Producto.class);
+                        p.setId(doc.getId());
+                        productos.add(p);
+                    }
+                    adapter.notifyDataSetChanged();
+                });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (listener != null) listener.remove();
     }
 }

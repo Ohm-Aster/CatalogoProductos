@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProducto"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -32,6 +32,8 @@
 
         <ImageButton
             android:id="@+id/btnEditar"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
@@ -52,6 +54,8 @@
 
         <ImageButton
             android:id="@+id/btnBorrar"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@id/btnEditar"

@@ -22,7 +22,7 @@ import java.util.List;
 
 public class AgregarProductoActivity extends AppCompatActivity {
 
-    private EditText etNombre, etCosto, etPrecio, etTiempo;
+    private EditText etNombre, etGramos, etCosto, etPrecio, etTiempo;
     private Button btnSeleccionarImagenes, btnGuardar;
     private ProductoViewModel viewModel;
     private Producto productoEditar = null;
@@ -51,6 +51,7 @@ public class AgregarProductoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_agregar_producto);
 
         etNombre = findViewById(R.id.etNombre);
+        etGramos = findViewById(R.id.etGramos);
         etCosto = findViewById(R.id.etCosto);
         etPrecio = findViewById(R.id.etPrecio);
         etTiempo = findViewById(R.id.etTiempo);
@@ -62,6 +63,7 @@ public class AgregarProductoActivity extends AppCompatActivity {
         if (getIntent().hasExtra("producto")) {
             productoEditar = (Producto) getIntent().getSerializableExtra("producto");
             etNombre.setText(productoEditar.getNombre());
+            etGramos.setText(String.valueOf(productoEditar.getGramos()));
             etCosto.setText(String.valueOf(productoEditar.getCosto()));
             etPrecio.setText(String.valueOf(productoEditar.getPrecio()));
             etTiempo.setText(productoEditar.getTiempo());
@@ -71,6 +73,7 @@ public class AgregarProductoActivity extends AppCompatActivity {
 
         btnGuardar.setOnClickListener(v -> {
             String nombre = etNombre.getText().toString();
+            String gramos = etGramos.getText().toString();
             String costo = etCosto.getText().toString();
             String precio = etPrecio.getText().toString();
             String tiempo = etTiempo.getText().toString();
@@ -80,13 +83,14 @@ public class AgregarProductoActivity extends AppCompatActivity {
                 return;
             }
 
+            double gramosD = Double.parseDouble(gramos);
             double costoD = Double.parseDouble(costo);
             double precioD = Double.parseDouble(precio);
 
             if (productoEditar == null) {
-                viewModel.agregarProducto(nombre, costoD, precioD, tiempo, imagenesSeleccionadas, this);
+                viewModel.agregarProducto(nombre, gramosD, costoD, precioD, tiempo, imagenesSeleccionadas, this);
             } else {
-                viewModel.actualizarProducto(productoEditar.getId(), nombre, costoD, precioD, tiempo, imagenesSeleccionadas, this);
+                viewModel.actualizarProducto(productoEditar.getId(), nombre, gramosD, costoD, precioD, tiempo, imagenesSeleccionadas, this);
             }
 
             finish();

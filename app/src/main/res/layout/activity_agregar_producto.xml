@@ -17,6 +17,13 @@
             android:inputType="text" />
 
         <EditText
+            android:id="@+id/etGramos"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Gramos de filamento"
+            android:inputType="text" />
+
+        <EditText
             android:id="@+id/etCosto"
             android:layout_width="match_parent"
             android:layout_height="50dp"

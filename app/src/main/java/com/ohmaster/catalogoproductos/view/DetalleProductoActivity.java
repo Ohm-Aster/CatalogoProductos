@@ -17,7 +17,7 @@ import com.ohmaster.catalogoproductos.model.Producto;
 
 public class DetalleProductoActivity extends AppCompatActivity {
 
-    private TextView tvNombre, tvPrecio, tvCosto, tvTiempo;
+    private TextView tvNombre,tvGramos, tvPrecio, tvCosto, tvTiempo;
     private ViewPager2 viewPager;
     private Button btnEditar, btnEliminar;
     private Producto producto;
@@ -28,6 +28,7 @@ public class DetalleProductoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_producto);
 
         tvNombre = findViewById(R.id.tvNombre);
+        tvGramos = findViewById(R.id.tvGramos);
         tvPrecio = findViewById(R.id.tvPrecio);
         tvCosto = findViewById(R.id.tvCosto);
         tvTiempo = findViewById(R.id.tvTiempo);
@@ -39,9 +40,10 @@ public class DetalleProductoActivity extends AppCompatActivity {
 
         if (producto != null) {
             tvNombre.setText(producto.getNombre());
+            tvGramos.setText("Filamento: "+producto.getGramos()+" gr");
             tvPrecio.setText("Precio: $" + producto.getPrecio());
             tvCosto.setText("Costo: $" + producto.getCosto());
-            tvTiempo.setText("Tiempo: " + producto.getTiempo());
+            tvTiempo.setText("Tiempo: " + producto.getTiempo()+" hrs");
             viewPager.setAdapter(new ImagenesAdapter(producto.getImagenes(), this));
         }
 

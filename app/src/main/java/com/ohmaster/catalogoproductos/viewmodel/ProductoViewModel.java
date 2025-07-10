@@ -25,11 +25,11 @@ public class ProductoViewModel extends ViewModel {
         repository.obtenerProductos(productosLiveData::setValue);
     }
 
-    public void agregarProducto(String nombre, double costo, double precio, String tiempo, List<Uri> imagenes, Context context) {
-        repository.agregarProducto(nombre, costo, precio, tiempo, imagenes, context);
+    public void agregarProducto(String nombre, double gramos, double costo, double precio, String tiempo, List<Uri> imagenes, Context context) {
+        repository.agregarProducto(nombre, gramos, costo, precio, tiempo, imagenes, context);
     }
 
-    public void actualizarProducto(String id, String nombre, double costo, double precio, String tiempo, List<Uri> imagenes, Context context) {
-        repository.actualizarProducto(id, nombre, costo, precio, tiempo, imagenes, context);
+    public void actualizarProducto(String id, String nombre, double gramos,double costo, double precio, String tiempo, List<Uri> imagenes, Context context) {
+        repository.actualizarProducto(id, nombre, gramos, costo, precio, tiempo, imagenes, context);
     }
 }
